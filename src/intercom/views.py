@@ -83,7 +83,36 @@ def personnel_map(request):
             print('exception: ', sys.exc_info)
             traceback.print_exc()
 
+    return HttpResponse(json.dumps(d_json()))
 
 
 
-    return HttpResponse(json.dumps(response))
+def d_json():
+    """
+    """
+
+    d_personnel = {
+
+        "personnel": {
+            1:{"name":"Danny", "surname":"Braniss", "room":"B 101", "path":"",},
+            2:{"name":"Ely", "surname":"Levy", "room":"B 102", "path":"",},
+            3:{"name":"Jorge", "surname":"Najenson", "room":"B 103", "path":"",},
+            4:{"name":"Raanan", "surname":"Chermoni", "room":"B 104", "path":"",},
+            5:{"name":"Tanya", "surname":"Kuzmitski", "room":"Open Space", "path":"",},
+            6:{"name":"Yair", "surname":"Yarom", "room":"Open Space", "path":"",},
+            7:{"name":"Chana", "surname":"Slutzkin", "room":"Open Space", "path":"",},
+            8:{"name":"Dima", "surname":"Surname", "room":"B 104", "path":"",},
+            9:{"name":"Tomer", "surname":"Klainer", "room":"Open Space", "path":"",},
+            10:{"name":"Ephraim", "surname":"Silverberg", "room":"Server", "path":"",},
+            11:{"name":"Pavel", "surname":"Gak", "room":"Open Space", "path":"Open Space",},
+            12:{"name":"Naama", "surname":"Shemesh", "room":"", "path":"Open Space",},
+        },
+
+        "id_order" : [1, 3, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+
+        "update":"the date"
+    }
+
+    return d_personnel
+
+
