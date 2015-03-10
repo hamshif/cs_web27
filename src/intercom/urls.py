@@ -11,10 +11,11 @@ urlpatterns = patterns('intercom.views',
     url(r'^serverless_webrtc/$', 'serverless_webrtc', name='serverless_webrtc'),
     url(r'^webrtc_example/$', 'webrtc_example', name='webrtc_example'),
 
+    url(r'^personnel_map/$', 'personnel_map', name='personnel_map'),
+
     # url(r'^soc/$', 'soc', name='soc'),
 
 
     url(r'^soc/$', SocView.as_view(), name='soc'),
     url(r'^$', RedirectView.as_view(url=reverse_lazy('soc'))),
 )
-

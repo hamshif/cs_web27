@@ -1,3 +1,5 @@
+import json
+from django.views.decorators.cache import never_cache
 import os
 import traceback
 from django.contrib.auth.models import User, Group
@@ -57,3 +59,31 @@ class SocView(TemplateView):
         welcome = RedisMessage('Hello you sniveling fools')  # create a welcome message to be sent to everybody
         RedisPublisher(facility='foobar', broadcast=True).publish_message(welcome)
         return super(SocView, self).get(request, *args, **kwargs)
+
+
+@never_cache
+def personnel_map(request):
+
+    """
+    """
+
+    response = {"message":"default"}
+
+    if request.method == 'GET':
+
+        try:
+
+            g = request.GET
+
+            location = g.__getitem__('location')
+            print('location:', location)
+
+        except Exception:
+
+            print('exception: ', sys.exc_info)
+            traceback.print_exc()
+
+
+
+
+    return HttpResponse(json.dumps(response))
