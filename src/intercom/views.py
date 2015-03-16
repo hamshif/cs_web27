@@ -93,24 +93,33 @@ def d_json():
 
     d_personnel = {
 
+        "rooms": {
+            1:{"num":1, "building":"Rothberg", "wing":"B", "floor":1},
+            2:{"num":2, "building":"Rothberg", "wing":"B", "floor":1},
+            3:{"num":3, "building":"Rothberg", "wing":"B", "floor":1},
+            4:{"num":4, "building":"Rothberg", "wing":"B", "floor":1},
+            5:{"num":13, "building":"Rothberg", "wing":"B", "floor":1},
+            6:{"num":15, "building":"Rothberg", "wing":"B", "floor":1},
+        },
+
         "personnel": {
-            1:{"name":"Danny", "surname":"Braniss", "room":"B 101", "path":"",},
-            2:{"name":"Ely", "surname":"Levy", "room":"B 102", "path":"",},
-            3:{"name":"Jorge", "surname":"Najenson", "room":"B 103", "path":"",},
-            4:{"name":"Raanan", "surname":"Chermoni", "room":"B 104", "path":"",},
-            5:{"name":"Tanya", "surname":"Kuzmitski", "room":"Open Space", "path":"",},
-            6:{"name":"Yair", "surname":"Yarom", "room":"Open Space", "path":"",},
-            7:{"name":"Chana", "surname":"Slutzkin", "room":"Open Space", "path":"",},
-            8:{"name":"Dima", "surname":"Surname", "room":"B 104", "path":"",},
-            9:{"name":"Tomer", "surname":"Klainer", "room":"Open Space", "path":"",},
-            10:{"name":"Ephraim", "surname":"Silverberg", "room":"Server", "path":"",},
-            11:{"name":"Pavel", "surname":"Gak", "room":"Open Space", "path":"Open Space",},
-            12:{"name":"Naama", "surname":"Shemesh", "room":"", "path":"Open Space",},
+            1:{"name":"Danny", "surname":"Braniss", "room":1, "path":"",},
+            2:{"name":"Ely", "surname":"Levy", "room":2, "path":"",},
+            3:{"name":"Jorge", "surname":"Najenson", "room":3, "path":"",},
+            4:{"name":"Raanan", "surname":"Chermoni", "room":4, "path":"",},
+            5:{"name":"Tanya", "surname":"Kuzmitski", "room":5, "path":"",},
+            6:{"name":"Yair", "surname":"Yarom", "room":5, "path":"",},
+            7:{"name":"Chana", "surname":"Slutzkin", "room":5, "path":"",},
+            8:{"name":"Dima", "surname":"Surname", "room":4, "path":"",},
+            9:{"name":"Tomer", "surname":"Klainer", "room":5, "path":"",},
+            10:{"name":"Ephraim", "surname":"Silverberg", "room":6, "path":"",},
+            11:{"name":"Pavel", "surname":"Gak", "room":5, "path":"Open Space",},
+            12:{"name":"Naama", "surname":"Shemesh", "room":5, "path":"Open Space",},
         },
 
         "id_order" : [1, 3, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12],
 
-        "update":"the date"
+        "last_update":"the date"
     }
 
     return d_personnel
