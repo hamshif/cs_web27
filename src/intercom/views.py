@@ -125,3 +125,35 @@ def d_json():
     return d_personnel
 
 
+@never_cache
+def error_report(request):
+
+    """
+    """
+
+    response = {"message":"default"}
+
+    try:
+
+        if request.is_ajax():
+            if request.method == 'POST':
+
+                j = json.loads(request.body.decode("utf-8"))
+                print('error_report: ', j['error_report'])
+                # logger.debug('j: ' + j)
+
+
+        j['message'] = 'followup'
+        # logger.debug("j['counter']:" + j['counter'])
+
+        j['text'] = "baff"
+
+
+    except Exception:
+
+        print(sys.exc_info())
+        traceback.print_exc()
+
+
+
+    return HttpResponse(json.dumps(response))

@@ -12,10 +12,16 @@
         <script src="/static/intercom/webrtc-example/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/intercom/webrtc-example/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
+        <script src="/static/cs_web27/js/main.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/intercom/webrtc-example/js/intercom.js" type="text/javascript" charset="utf-8"></script>
+
         {#global.js i the entry point #}
         <script src="/static/intercom/webrtc-example/js/global.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/intercom/webrtc-example/js/adapt.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/intercom/webrtc-example/js/webrtc.js" type="text/javascript" charset="utf-8"></script>
+
+
+
 
 
 
@@ -29,6 +35,7 @@
             <div class="modal-header">
               <h3>WebRTC Sample Connection</h3>
             </div>
+
 
             <div class="modal-body">
               <div class="control-group">
@@ -44,6 +51,9 @@
 
         </div>
         <!-- End of the Modal Connection -->
+
+
+
 
         <!-- Modal About -->
         <div class="modal hide fade" id="ModalAbout">
@@ -69,6 +79,8 @@
         </div>
         <!-- End of the Modal About -->
 
+{#        <button type="button" onclick="window.jsinterface.showToast('bargain')">Boo</button>#}
+
         <!-- Navbar -->
         <div class="navbar navbar-fixed-top">
           <div class="navbar-inner">
@@ -93,8 +105,12 @@
         </div>
         <!-- End of the Navbar -->
 
+
         <!-- Content -->
         <div class="container-fluid">
+
+
+
 
             <!-- Introduction -->
             <div class="hero-unit">
@@ -103,6 +119,26 @@
             <!-- End of Introduction -->
 
             <div class="row-fluid">
+
+                <button onClick="showAndroidToast('Hello Android!')" style="width: 200px; height: 60px">Boo Yaa Woomp</button>
+
+                <script type="text/javascript">
+
+                    function showAndroidToast(toast) {
+
+                        try
+                        {
+                          Android.showToast(toast);
+                        }
+                        catch(err) {
+                            error_report({"error_report": err.message});
+                        }
+
+                      }
+
+                </script>
+
+
 
                 <div class="span6">
                   <!-- Local Video -->
@@ -134,6 +170,8 @@
                   </div>
                   <!-- End of Remote Video -->
                 </div>
+
+
 
             </div>
 
