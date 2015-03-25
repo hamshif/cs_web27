@@ -12,18 +12,12 @@
         <script src="/static/intercom/webrtc-example/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/intercom/webrtc-example/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="/static/cs_web27/js/main.js" type="text/javascript" charset="utf-8"></script>
-        <script src="/static/intercom/webrtc-example/js/intercom.js" type="text/javascript" charset="utf-8"></script>
-
-        {#global.js i the entry point #}
         <script src="/static/intercom/webrtc-example/js/global.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/intercom/webrtc-example/js/adapt.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/intercom/webrtc-example/js/webrtc.js" type="text/javascript" charset="utf-8"></script>
 
-
-
-
-
+        <script src="/static/cs_web27/js/main.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/intercom/webrtc-example/js/intercom.js" type="text/javascript" charset="utf-8"></script>
 
     </head>
 
@@ -54,92 +48,8 @@
 
 
 
-
-        <!-- Modal About -->
-        <div class="modal hide fade" id="ModalAbout">
-
-            <div class="modal-header">
-              <h3>About WebRTC</h3>
-            </div>
-
-            <div class="modal-body">
-              <blockquote>
-                <p align="justify">WebRTC is an open source project that allows web browsers to communicate with one another using the protocol Real-Time Communications (RTC) via a simple Javascript API. WebRTC components were optimized to better serve this purpose.</p>
-                <p align="justify">WebRTC initiative is a project supported primarily by Google, Mozilla and Opera.</p>
-                <small class="pull-right">Project WebRTC</small>
-              </blockquote>
-            </div>
-
-            <div class="modal-footer">
-            <button id="close" class="btn btn-primary">Close</button>
-            <a class="btn btn-small btn-info" target="_blank" href="http://www.webrtc.org/">
-            <i class="icon-info-sign icon-white"></i>More Info</a>
-            </div>
-
-        </div>
-        <!-- End of the Modal About -->
-
-{#        <button type="button" onclick="window.jsinterface.showToast('bargain')">Boo</button>#}
-
-        <!-- Navbar -->
-        <div class="navbar navbar-fixed-top">
-          <div class="navbar-inner">
-            <div class="container-fluid">
-              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </a>
-              <a class="brand" href="./index.php">WebRTC Sample</a>
-              <div class="nav-collapse">
-                <ul class="nav">
-                  <li class="active"><a href="./index.php">Home</a></li>
-                  <li><a href="https://github.com/ltribolet/webrtc-example" target="_blank">Project GitHub</a></li>
-                  <li><a href="http://wiki.tribolet.fr/" target="_blank">Wiki</a></li>
-                  <li><span id="about" class="about">About webRTC</span></li>
-                </ul>
-                <p class="navbar-text pull-right">Logged in as <a id="username" href="#">username</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End of the Navbar -->
-
-
         <!-- Content -->
         <div class="container-fluid">
-
-
-
-
-            <!-- Introduction -->
-            <div class="hero-unit">
-              <p>This is a demo for testing WebRTC in a LAN between two clients with WebRTC support.</p>
-            </div>
-            <!-- End of Introduction -->
-
-            <div class="row-fluid">
-
-                <button onClick="invite_to_room()" style="width: 200px; height: 60px">Invite</button>
-                <button onClick="showAndroidToast('Hello Android!')" style="width: 200px; height: 60px">Boo Yaa Woomp</button>
-
-                <script type="text/javascript">
-
-                    function showAndroidToast(toast) {
-
-                        try
-                        {
-                          Android.showToast(toast);
-                        }
-                        catch(err) {
-                            error_report({"error_report": err.message});
-                        }
-
-                      }
-
-                </script>
-
-
 
                 <div class="span6">
                   <!-- Local Video -->
@@ -181,8 +91,6 @@
 
             <hr>
 
-            <!-- Footer -->
-            <footer><p>&copy; Atos Worldline 2012</p></footer>
 
         </div>
         <!-- End of the Content -->
