@@ -157,3 +157,38 @@ def error_report(request):
 
 
     return HttpResponse(json.dumps(response))
+
+
+@never_cache
+def invite_to_room(request):
+
+    """
+    """
+
+    response = {"message":"default"}
+
+    try:
+
+        if request.is_ajax():
+            if request.method == 'POST':
+
+                j = json.loads(request.body.decode("utf-8"))
+                print(str(j))
+
+                print('type(j)', type(j))
+
+                print('room: ', str(j['room']))
+                print('browse_text: ', j['personnel']['browse_text'])
+                # logger.debug('j: ' + j)
+
+                response['message'] = j['personnel']['browse_text']
+
+
+    except Exception:
+
+        print(sys.exc_info())
+        traceback.print_exc()
+
+
+
+    return HttpResponse(json.dumps(response))
