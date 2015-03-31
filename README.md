@@ -1,11 +1,46 @@
+
+A Django one-page application portal including:
+
 An Intercom app
 
-This Repo contains a Django Python project designed to serve real-time web content for an intercom app
-both web and hybrid Android located at
+designed to serve
+both browser and a hybrid Android app located at:
 
 https://github.com/hamshif/Intercom.git
 
-In this project there also is a Node.js signalling backend at
+
+The django app is best run with ssl to avoid browser permission annoyance:
+
+1.  § cd ..../cs_web27/src
+
+2.  § python manage.py runsslserver e-10:8000 [note the ssl server]
+
+in addition websocket signalling server is needed to connect peers move the above to background or open another shell and:
+
+3.  § cd ..../cs_web27/src/intercom/static/webrtc
+
+4.  § node ws_server.js
+
+
+to test https://your_url:8000/intercom/webrtc/
+
+
+
+
+if you are just interested in the webrtc bit without django and python:
+
+https://github.com/hamshif/webrtc.git
+
+
+
+In this project there also another attempt is a Node.js signalling backend at
+
+
 cs_web27/src/intercom/static/intercom/webrtc-example/nodejs_server/index.js
 
 To be run by a separate node server [I will work to merge these given time]
+
+
+test at
+
+https://e-10.cs.huji.ac.il:8000/intercom/webrtc_example/

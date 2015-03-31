@@ -9,6 +9,33 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import sys
+import traceback
+
+
+WS_TYPE = 'ws'
+
+
+if sys.argv:
+
+    try:
+
+        for arg in sys.argv:
+
+            print('sys argument :', arg)
+            if arg == 'runsslserver':
+
+                WS_TYPE = 'wss'
+
+
+    except Exception:
+        print('exception: ', sys.exc_info)
+        traceback.print_exc()
+
+# print('WS_TYPE: ', WS_TYPE)
+
+
+
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))

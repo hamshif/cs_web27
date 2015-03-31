@@ -27,8 +27,6 @@ def get_or_create_csrf_token(request):
 
 def respond_html(request, html_path):
 
-    print('goolash & beer')
-
     try:
 
         print(os.path.dirname(os.path.realpath(__file__)))

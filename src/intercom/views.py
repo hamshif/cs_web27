@@ -41,11 +41,27 @@ def webrtc_example(request):
     return respond_html(request, "/intercom/templates/intercom/webrtc_example.html")
 
 
+def webrtc(request):
+
+    response = respond_html(request, "/intercom/static/webrtc/client/html/index.html")
+
+    if settings.WS_TYPE == 'ws':
+
+        response['ssl'] = 'false'
+
+    else:
+
+        response['ssl'] = 'true'
+
+
+    return response
+
+
+
+
 def soc(request):
 
     return respond_html(request, "/intercom/templates/intercom/soc.html")
-
-
 
 
 
@@ -130,6 +146,8 @@ def error_report(request):
 
     """
     """
+
+
 
     response = {"message":"default"}
 

@@ -10,6 +10,10 @@ urlpatterns = patterns('intercom.views',
     url(r'^conference/$', 'conference', name='conference'),
     url(r'^serverless_webrtc/$', 'serverless_webrtc', name='serverless_webrtc'),
     url(r'^webrtc_example/$', 'webrtc_example', name='webrtc_example'),
+
+
+    url(r'^webrtc/$', 'webrtc', name='webrtc'),
+
     url(r'^error_report/$', 'error_report', name='error_report'),
     url(r'^invite_to_room/$', 'invite_to_room', name='invite_to_room'),
 
