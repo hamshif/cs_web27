@@ -33,7 +33,7 @@ https://github.com/hamshif/webrtc.git
 
 
 
-In this project there also another attempt is a Node.js signalling backend at
+In this project there is also another attempt is a Node.js signalling backend at
 
 
 cs_web27/src/intercom/static/intercom/webrtc-example/nodejs_server/index.js
