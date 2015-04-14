@@ -2,13 +2,14 @@
 
 var fs = require('fs');
 
-var ssl_path = 'keys/hacksparrow-key.pem';
-var cert_path = 'keys/hacksparrow-cert.pem';
+var ssl_path = 'keys/iwet-key.pem';
+var cert_path = 'keys/iwet-cert.pem';
 
 
 
 var cfg = {
     ssl: true,
+//    ssl: false,
     port: 63949,
     ssl_key: ssl_path,
     ssl_cert: cert_path
@@ -38,6 +39,8 @@ if (cfg.ssl)
 
     });
 
+
+
     console.log("Secure Web-Socket server running at\n  => wss://localhost:" + cfg.port + "/\nCTRL + C to shutdown");
 }
 else
@@ -64,6 +67,10 @@ var wsServer = new WebSocketServer({
 // this is executed each time the websocket
 // server receives an request
 wsServer.on('request', function(request) {
+
+    console.log('request:');
+    console.log(request);
+
 
 	// allow all incoming connections
 	var connection = request.accept(null, request.origin);

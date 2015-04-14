@@ -209,7 +209,8 @@ function WebRTC() {
 
         console.log(wsUrl);
 
-		connection = new WebSocket(wsUrl);
+        connection = new WebSocket(wsUrl);
+
 
 		// connection was successful
 		connection.onopen = function(event){
@@ -224,11 +225,16 @@ function WebRTC() {
 
 		// connection was closed
 		connection.onclose = function(event){
-			console.log((new Date())+' Connection was closed');
+			console.log((new Date())+' Connection was closed the event:');
+            console.log(event);
 		};
 
 		// this function is called whenever the server sends some data
 		connection.onmessage = function(message){
+
+            console.log('message');
+            console.log(message);
+
             try {
                 var data = JSON.parse(message.data);
             } catch (e) {

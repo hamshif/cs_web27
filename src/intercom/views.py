@@ -57,6 +57,24 @@ def webrtc(request):
     return response
 
 
+def roojoom(request):
+
+    response = respond_html(request, "/intercom/static/roojoom/html/index.html")
+
+    if settings.WS_TYPE == 'ws':
+
+        response['ssl'] = 'false'
+
+    else:
+
+        response['ssl'] = 'true'
+
+
+    return response
+
+
+
+
 
 
 def soc(request):

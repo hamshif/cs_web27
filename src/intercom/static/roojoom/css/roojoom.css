@@ -1,0 +1,123 @@
+body
+{
+
+}
+
+.english
+{
+    background-color: #4082c4;
+}
+
+.hebrew
+{
+    background-color: #009300;
+}
+
+.mobile
+{
+    background-color: #f5f531;
+}
+
+#div_control
+{
+    display: table;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: #3dc4b6;
+}
+
+
+#div_frame
+{
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    min-width: 800px;
+}
+
+#div_middle
+{
+    margin-top: 50px;
+    margin-left:auto;
+    margin-right:auto;
+    border-style: solid;
+    border-width: 2px;
+    border-left-color: white;
+    border-right-color: white;
+    border-top-color: white;
+    border-bottom-color: transparent;
+    max-width: 500px;
+}
+
+#div_pannel
+{
+    border-style: solid;
+    border-width: 2px;
+    border-top-color: blue;
+}
+
+
+
+.tablewrapper
+{
+    position: relative;
+}
+
+.table
+{
+    display: table;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.row
+{
+    display: table-row;
+    text-align: center;
+}
+
+.cell
+{
+    border: 1px solid white;
+    display: table-cell;
+
+}
+
+.row_wide
+{
+    border: 1px solid white;
+        -webkit-column-span: 2;
+    column-span: 2;
+}
+
+.cell_wide
+{
+    white-space: nowrap;
+
+
+}
+
+
+
+
+.cell.empty
+{
+    border: none;
+    width: 100px;
+}
+
+.cell.rowspanned
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+}
+
+.op_buttons
+{
+    height: 100px;
+    width: 150px;
+}
+
+/*span { width:100%; }*/
