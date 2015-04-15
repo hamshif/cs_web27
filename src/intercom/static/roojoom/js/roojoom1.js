@@ -26,7 +26,7 @@ function layEnglish(parent_element)
     var div_left_top = $('<div>', {
 
         id: "div_left_top",
-        class: "row"
+        class: "cell"
     });
 
     div_top.append(div_left_top);
@@ -35,14 +35,46 @@ function layEnglish(parent_element)
     var div_right_top = $('<div>', {
 
         id: "div_right_top",
-        class: "row"
+        class: "cell"
     });
 
     div_top.append(div_right_top);
 
     div_msg.appendTo(div_left_top);
 
+    div_form_fields.appendTo(div_right_top);
 
+    div_rooj.appendTo(div_frame);
+
+
+    var div_bottom = $('<div>', {
+
+        id: "div_bottom",
+        class: "table bottom_english"
+    });
+
+    div_frame.append(div_bottom);
+
+
+    var div_left_bottom = $('<div>', {
+
+        id: "div_left_bottom",
+        class: "cell"
+    });
+
+    div_bottom.append(div_left_bottom);
+
+
+    var div_right_bottom = $('<div>', {
+
+        id: "div_right_bottom",
+        class: "cell"
+    });
+
+    div_bottom.append(div_right_bottom);
+
+    div_ok.appendTo(div_left_bottom);
+    div_cancel.appendTo(div_right_bottom);
 };
 
 
@@ -144,15 +176,15 @@ function createWrappedElements()
         type: "text"
     });
 
-    div_first_name = $('<div>', {
+    div_form_fields = $('<div>', {
 
-        id: "div_first_name",
+        id: "div_form_fields",
         class: "wrapper"
     });
 
-    div_first_name.append(it_first_name);
+    div_form_fields.append(it_first_name);
 
-    $('body').append(div_first_name);
+    $('body').append(div_form_fields);
 
 
     a_rooj = $('<a>', {

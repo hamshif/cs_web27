@@ -39,6 +39,12 @@ body
     margin-top: 50px;
 }
 
+.bottom_english
+{
+    background-color: coral;
+    min-width: 400px;
+    min-height: 300px;
+}
 
 
 #div_frame
@@ -76,13 +82,21 @@ body
 #div_right_top
 {
     background-color: indianred;
-    min-height: 40px;
-    min-width: 40px;
 }
 
 #div_left_top
 {
     background-color: palegreen;
-    min-height: 40px;
-    min-width: 40px;
+}
+
+#div_rooj
+{
+    /*background-color: coral;*/
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
 }
