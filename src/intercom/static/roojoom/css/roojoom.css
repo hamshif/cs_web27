@@ -83,11 +83,13 @@ body
 #div_right_top
 {
     background-color: indianred;
+    vertical-align: top;
+
 }
 
 #div_left_top
 {
-    /*background-color: palegreen;*/
+    background-color: palegreen;
 }
 
 #div_msg
@@ -96,6 +98,8 @@ body
 
 #p_msg
 {
+    margin-left: 5px;
+    background-color: cadetblue;
 }
 
 #a_rooj
@@ -131,10 +135,26 @@ body
 
 #div_form_fields
 {
-    top: 5px;
+    margin-top: 5px;
     margin-right: 5px;
-    position: relative;
-    width: 120px;
     background-color: coral;
 }
 
+#form_field
+{
+    margin-bottom: 5px;
+    background-color: lightcyan;
+}
+
+.base
+{
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#ta_notes
+{
+    min-height: 5em;
+    overflow-y: auto;
+    word-wrap:break-word
+}

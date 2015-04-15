@@ -85,11 +85,16 @@ function layEnglish(parent_element)
 
     b_ok.css("margin-top", (div_left_bottom.height() - b_ok.height() )/2 +"px");
 
+    ta_notes.width(div_form_fields.width());
     it_first_name.width(ta_notes.width());
     it_last_name.width(ta_notes.width());
     it_phone.width(ta_notes.width());
     it_email.width(ta_notes.width());
+
+    div_form_fields.height(div_right_top -30);
 };
+
+
 
 
 
@@ -103,6 +108,15 @@ function createFrame(parent_element)
 
     parent_element.append(div_frame);
 };
+
+
+function textAreaAdjust(o) {
+
+    console.log('adjusting?');
+
+    o.style.height = "1px";
+    o.style.height = (25+o.scrollHeight)+"px";
+}
 
 
 function createWrappedElements()
@@ -185,7 +199,7 @@ function createWrappedElements()
     it_first_name = $('<input>', {
 
         id: 'it_first_name',
-        class: 'base',
+        class: 'base form_field',
         val: "First Name",
         type: "text"
     });
@@ -194,7 +208,7 @@ function createWrappedElements()
     it_last_name = $('<input>', {
 
         id: 'it_last_name',
-        class: 'base',
+        class: 'base form_field',
         val: "Last Name",
         type: "text"
     });
@@ -203,7 +217,7 @@ function createWrappedElements()
     it_phone = $('<input>', {
 
         id: 'it_phone',
-        class: 'base',
+        class: 'base form_field',
         val: "Phone",
         type: "tel"
     });
@@ -211,7 +225,7 @@ function createWrappedElements()
     it_email = $('<input>', {
 
         id: 'it_email',
-        class: 'base',
+        class: 'base form_field',
         val: "Last Name",
         type: "email"
     });
@@ -219,9 +233,13 @@ function createWrappedElements()
     ta_notes = $('<textarea>', {
 
         id: 'ta_notes',
-        class: 'base',
+        class: 'base form_field',
         val: "Notes"
     });
+
+
+    ta_notes.keyup( function(){textAreaAdjust(this);})
+
 
 
     div_form_fields = $('<div>', {
