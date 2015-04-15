@@ -87,6 +87,23 @@ body
 #div_left_top
 {
     background-color: palegreen;
+
+
+
+}
+
+#div_msg
+{
+}
+
+#p_msg
+{
+}
+
+#a_rooj
+{
+    /*margin-top: 30px;*/
+    /*margin-bottom: 30px;*/
 }
 
 #div_rooj
@@ -99,4 +116,13 @@ body
     border-bottom-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
+}
+
+
+.b_big
+{
+    border:none;
+    height: 40px;
+    width: 160px;
+    background-color: white;
 }

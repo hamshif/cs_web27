@@ -75,6 +75,17 @@ function layEnglish(parent_element)
 
     div_ok.appendTo(div_left_bottom);
     div_cancel.appendTo(div_right_bottom);
+
+
+    div_left_bottom.width(div_left_top.width());
+
+
+    p_msg.css("margin-top", (div_left_top.height() - p_msg.height() )/2 +"px");
+    p_msg.css("margin-left", "5px");
+
+    b_ok.css("margin-top", (div_left_bottom.height() - b_ok.height() )/2 +"px");
+
+
 };
 
 
@@ -213,7 +224,7 @@ function createWrappedElements()
     b_ok = $('<input>', {
 
         id: 'b_ok',
-        class: 'base',
+        class: 'base  b_big',
         val: "OK",
         type: "button",
         click: function()
@@ -237,7 +248,7 @@ function createWrappedElements()
     b_cancel = $('<input>', {
 
         id: 'b_cancel',
-        class: 'base',
+        class: 'base  b_big',
         val: "Cancel",
         type: "button",
         click: function()
