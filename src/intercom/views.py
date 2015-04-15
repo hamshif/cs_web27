@@ -73,7 +73,20 @@ def roojoom(request):
     return response
 
 
+def roojoom1(request):
 
+    response = respond_html(request, "/intercom/static/roojoom/html/index1.html")
+
+    if settings.WS_TYPE == 'ws':
+
+        response['ssl'] = 'false'
+
+    else:
+
+        response['ssl'] = 'true'
+
+
+    return response
 
 
 
@@ -164,8 +177,6 @@ def error_report(request):
 
     """
     """
-
-
 
     response = {"message":"default"}
 

@@ -21,6 +21,7 @@ urlpatterns = patterns('intercom.views',
     url(r'^personnel_map/$', 'personnel_map', name='personnel_map'),
 
     url(r'^roojoom/$', 'roojoom', name='roojoom'),
+    url(r'^roojoom1/$', 'roojoom1', name='roojoom1'),
 
     # url(r'^soc/$', 'soc', name='soc'),
 

@@ -207,7 +207,9 @@ function WebRTC() {
 	this.connectToSocket = function(wsUrl){
 		// open the websocket
 
+        console.log('wsUrl:');
         console.log(wsUrl);
+        console.log('');
 
         connection = new WebSocket(wsUrl);
 

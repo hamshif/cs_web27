@@ -5,7 +5,10 @@ var fs = require('fs');
 var ssl_path = 'keys/iwet-key.pem';
 var cert_path = 'keys/iwet-cert.pem';
 
+//var ssl_path = 'old_keys/hacksparrow-key.pem';
+//var cert_path = 'old_keys/hacksparrow-cert.pem';
 
+console.log('shproot');
 
 var cfg = {
     ssl: true,

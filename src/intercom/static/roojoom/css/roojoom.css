@@ -35,19 +35,19 @@ body
     min-width: 800px;
 }
 
-#div_middle
-{
-    margin-top: 50px;
-    margin-left:auto;
-    margin-right:auto;
-    border-style: solid;
-    border-width: 2px;
-    border-left-color: white;
-    border-right-color: white;
-    border-top-color: white;
-    border-bottom-color: transparent;
-    max-width: 500px;
-}
+/*#div_middle*/
+/*{*/
+    /*margin-top: 50px;*/
+    /*margin-left:auto;*/
+    /*margin-right:auto;*/
+    /*border-style: solid;*/
+    /*border-width: 2px;*/
+    /*border-left-color: white;*/
+    /*border-right-color: white;*/
+    /*border-top-color: white;*/
+    /*border-bottom-color: transparent;*/
+    /*max-width: 500px;*/
+/*}*/
 
 #div_pannel
 {
@@ -56,6 +56,12 @@ body
     border-top-color: blue;
 }
 
+#p_msg
+{
+    /*position:absolute;*/
+    /*margin-top: 80px;*/
+
+}
 
 
 .tablewrapper
@@ -73,19 +79,20 @@ body
 .row
 {
     display: table-row;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .cell
 {
     border: 1px solid white;
     display: table-cell;
-
+    text-align: center
 }
 
 .row_wide
 {
-    border: 1px solid white;
+    display: block;
+    background-color: indianred;
         -webkit-column-span: 2;
     column-span: 2;
 }
@@ -99,25 +106,18 @@ body
 
 
 
-
-.cell.empty
-{
-    border: none;
-    width: 100px;
-}
-
-.cell.rowspanned
-{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-}
-
 .op_buttons
 {
     height: 100px;
     width: 150px;
 }
 
-/*span { width:100%; }*/
+#div_msg
+{
+    /*margin-top: 50%;*/
+}
+
+
+#p_msg
+{
+}

@@ -43,13 +43,12 @@ function createGUI()
     div_home_link_wrapper = $('<div>', {
 
         id: "div_home_link_wrapper",
-        class: "row row_wide"
+        class: "row_wide"
     });
 
     span_home_link = $('<span>', {
 
-        id: "span_home_link",
-        class: "cell cell_wide"
+        id: "span_home_link"
     });
 
     div_home_link_wrapper.append(span_home_link);
@@ -188,13 +187,21 @@ function createMsg(parent_element)
 
 function createMiddle(parent_element)
 {
-    div_msg= $('<div>', {
+    div_msg_wrapper = $('<div>', {
 
-        id: "div_msg",
+        id: "div_msg_wrapper",
         class: "cell"
     });
 
-    parent_element.append(div_msg);
+    parent_element.append(div_msg_wrapper);
+
+
+    div_msg= $('<div>', {
+
+        id: "div_msg"
+    });
+
+    div_msg_wrapper.append(div_msg);
 
     createMsg(div_msg);
 
