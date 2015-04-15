@@ -43,7 +43,8 @@ body
 {
     background-color: coral;
     min-width: 400px;
-    min-height: 300px;
+    min-height: 150px;
+    /*max-height: 200px;*/
 }
 
 
@@ -53,7 +54,7 @@ body
     border-width: 2px;
     border-color: blue;
     min-width: 800px;
-    min-height: 600px;
+    min-height: 400px;
 }
 
 
@@ -87,9 +88,6 @@ body
 #div_left_top
 {
     background-color: palegreen;
-
-
-
 }
 
 #div_msg
@@ -102,14 +100,17 @@ body
 
 #a_rooj
 {
-    /*margin-top: 30px;*/
-    /*margin-bottom: 30px;*/
+    display: inline-block;
+    margin-top: 12px;
 }
 
 #div_rooj
 {
     /*background-color: coral;*/
     text-align: center;
+    
+    height: 40px;
+
     border-style: solid;
     border-width: 2px;
     border-color: blue;
@@ -126,3 +127,4 @@ body
     width: 160px;
     background-color: white;
 }
+

@@ -218,9 +218,6 @@ function createWrappedElements()
 
 
 
-
-
-
     b_ok = $('<input>', {
 
         id: 'b_ok',
