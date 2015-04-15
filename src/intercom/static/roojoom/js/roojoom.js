@@ -1,6 +1,16 @@
 
+
+var mobile = false;
+
 $(document).ready(function()
 {
+    start_();
+});
+
+
+function start_()
+{
+    $('body').addClass('google_font');
     createFrame($('body'));
 
     createWrappedElements();
@@ -9,12 +19,12 @@ $(document).ready(function()
 
 
     div_control.insertBefore(div_frame);
-});
+}
 
 
 function layEnglish(parent_element)
 {
-    var div_top = $('<div>', {
+    div_top = $('<div>', {
 
         id: "div_top",
         class: "table top_english"
@@ -23,7 +33,7 @@ function layEnglish(parent_element)
     parent_element.append(div_top);
 
 
-    var div_left_top = $('<div>', {
+    div_left_top = $('<div>', {
 
         id: "div_left_top",
         class: "cell"
@@ -32,7 +42,7 @@ function layEnglish(parent_element)
     div_top.append(div_left_top);
 
 
-    var div_right_top = $('<div>', {
+    div_right_top = $('<div>', {
 
         id: "div_right_top",
         class: "cell"
@@ -47,7 +57,7 @@ function layEnglish(parent_element)
     div_rooj.appendTo(div_frame);
 
 
-    var div_bottom = $('<div>', {
+    div_bottom = $('<div>', {
 
         id: "div_bottom",
         class: "table bottom_english"
@@ -56,7 +66,7 @@ function layEnglish(parent_element)
     div_frame.append(div_bottom);
 
 
-    var div_left_bottom = $('<div>', {
+    div_left_bottom = $('<div>', {
 
         id: "div_left_bottom",
         class: "cell"
@@ -65,7 +75,7 @@ function layEnglish(parent_element)
     div_bottom.append(div_left_bottom);
 
 
-    var div_right_bottom = $('<div>', {
+    div_right_bottom = $('<div>', {
 
         id: "div_right_bottom",
         class: "cell"
@@ -93,8 +103,6 @@ function layEnglish(parent_element)
 
     div_form_fields.height(div_right_top -30);
 };
-
-
 
 
 
@@ -130,9 +138,26 @@ function createWrappedElements()
         type: "button",
         click: function()
         {
-            div_frame.removeClass('hebrew');
-            div_frame.removeClass('mobile');
-            div_frame.addClass('english');
+            if(mobile == true)
+            {
+                mobile = false;
+
+                $('body').empty();
+                start_();
+            }
+            else
+            {
+                div_frame.removeClass('hebrew');
+                div_frame.removeClass('mobile');
+                div_frame.addClass('english');
+
+                div_form_fields.appendTo(div_right_top);
+                div_msg.appendTo(div_left_top);
+
+                $('body').removeClass('ariel_font');
+                $('body').removeClass('mobile_font');
+                $('body').addClass('google_font');
+            }
         }
     });
 
@@ -144,9 +169,29 @@ function createWrappedElements()
         type: "button",
         click: function()
         {
-            div_frame.removeClass('english');
-            div_frame.removeClass('mobile');
-            div_frame.addClass('hebrew');
+            if(mobile == true)
+            {
+                mobile = false;
+
+                $('body').empty();
+
+
+                start_();
+            }
+            else
+            {
+                div_frame.removeClass('english');
+                div_frame.removeClass('mobile');
+                div_frame.addClass('hebrew');
+
+
+                div_form_fields.appendTo(div_left_top);
+                div_msg.appendTo(div_right_top);
+
+                $('body').removeClass('google_font');
+                $('body').removeClass('mobile_font');
+                $('body').addClass('ariel_font');
+            }
         }
     });
 
@@ -158,9 +203,32 @@ function createWrappedElements()
         type: "button",
         click: function()
         {
+            mobile = true;
+
             div_frame.removeClass('english');
             div_frame.removeClass('hebrew');
             div_frame.addClass('mobile');
+
+
+            $('body').removeClass('google_font');
+            $('body').removeClass('ariel_font');
+            $('body').addClass('mobile_font');
+
+
+            div_frame.removeClass('table');
+            div_left_top.addClass('table');
+            div_left_top.removeClass('cell');
+
+
+            div_left_top.insertAfter(div_top);
+
+            div_left_bottom.removeClass('cell');
+            div_left_bottom.addClass('table');
+            div_left_bottom.addClass('bottom_english');
+
+            div_left_bottom.css("text-align", "center");
+
+            div_left_bottom.insertAfter(div_bottom);
         }
     });
 
