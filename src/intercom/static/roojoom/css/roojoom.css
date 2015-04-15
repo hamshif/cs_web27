@@ -24,6 +24,27 @@ body
     margin-left:auto;
     margin-right:auto;
     background-color: #3dc4b6;
+    margin-bottom: -10px;
+}
+
+
+.top_english
+{
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    min-width: 400px;
+    min-height: 300px;
+    border-bottom-color: transparent;
+    margin-top: 50px;
+}
+
+.bottom_english
+{
+    /*background-color: coral;*/
+    min-width: 400px;
+    min-height: 150px;
+    /*max-height: 200px;*/
 }
 
 
@@ -31,43 +52,11 @@ body
 {
     border-style: solid;
     border-width: 2px;
-    border-color: blue;
+    border-color: darkblue;
     min-width: 800px;
+    min-height: 400px;
 }
 
-/*#div_middle*/
-/*{*/
-    /*margin-top: 50px;*/
-    /*margin-left:auto;*/
-    /*margin-right:auto;*/
-    /*border-style: solid;*/
-    /*border-width: 2px;*/
-    /*border-left-color: white;*/
-    /*border-right-color: white;*/
-    /*border-top-color: white;*/
-    /*border-bottom-color: transparent;*/
-    /*max-width: 500px;*/
-/*}*/
-
-#div_pannel
-{
-    border-style: solid;
-    border-width: 2px;
-    border-top-color: blue;
-}
-
-#p_msg
-{
-    /*position:absolute;*/
-    /*margin-top: 80px;*/
-
-}
-
-
-.tablewrapper
-{
-    position: relative;
-}
 
 .table
 {
@@ -84,40 +73,68 @@ body
 
 .cell
 {
-    border: 1px solid white;
+    /*border: 1px solid white;*/
     display: table-cell;
     text-align: center
 }
 
-.row_wide
+
+
+#div_right_top
 {
-    display: block;
     background-color: indianred;
-        -webkit-column-span: 2;
-    column-span: 2;
 }
 
-.cell_wide
+#div_left_top
 {
-    white-space: nowrap;
-
-
-}
-
-
-
-.op_buttons
-{
-    height: 100px;
-    width: 150px;
+    /*background-color: palegreen;*/
 }
 
 #div_msg
 {
-    /*margin-top: 50%;*/
 }
-
 
 #p_msg
 {
 }
+
+#a_rooj
+{
+    display: inline-block;
+    margin-top: 40px;
+    color: blue;
+}
+
+#div_rooj
+{
+    /*background-color: coral;*/
+    text-align: center;
+    
+    height: 40px;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: darkblue;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+
+.b_big
+{
+    border:none;
+    height: 40px;
+    width: 160px;
+    background-color: white;
+}
+
+#div_form_fields
+{
+    top: 5px;
+    margin-right: 5px;
+    position: relative;
+    width: 120px;
+    background-color: coral;
+}
+

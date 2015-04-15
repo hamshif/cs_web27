@@ -1,74 +1,117 @@
 
 $(document).ready(function()
 {
-    createGUI();
+    createFrame($('body'));
 
-    div_frame.addClass('english');
+    createWrappedElements();
+
+    layEnglish(div_frame);
+
+
+    div_control.insertBefore(div_frame);
 });
 
 
-function createGUI()
+function layEnglish(parent_element)
 {
-    div_control = $('<div>', {
+    var div_top = $('<div>', {
 
-        id: "div_control"
+        id: "div_top",
+        class: "table top_english"
     });
 
-    $("body").append(div_control);
-
-    createControl(div_control);
+    parent_element.append(div_top);
 
 
-    div_frame_wrapper = $('<div>', {
+    var div_left_top = $('<div>', {
 
-        id: "div_frame_wrapper",
-        class: "tablewrapper"
+        id: "div_left_top",
+        class: "cell"
     });
 
-    $("body").append(div_frame_wrapper);
+    div_top.append(div_left_top);
 
-    div_frame = $('<div>', {
 
-        id: "div_frame",
-        class: "table"
+    var div_right_top = $('<div>', {
+
+        id: "div_right_top",
+        class: "cell"
     });
 
-    div_frame_wrapper.append(div_frame);
+    div_top.append(div_right_top);
 
-    createFrame(div_frame);
+    div_msg.appendTo(div_left_top);
+
+    div_form_fields.appendTo(div_right_top);
+
+    div_rooj.appendTo(div_frame);
 
 
+    var div_bottom = $('<div>', {
 
-
-    div_home_link_wrapper = $('<div>', {
-
-        id: "div_home_link_wrapper",
-        class: "row_wide"
+        id: "div_bottom",
+        class: "table bottom_english"
     });
 
-    span_home_link = $('<span>', {
+    div_frame.append(div_bottom);
 
-        id: "span_home_link"
+
+    var div_left_bottom = $('<div>', {
+
+        id: "div_left_bottom",
+        class: "cell"
     });
 
-    div_home_link_wrapper.append(span_home_link);
-
-    div_home_link_wrapper.insertAfter(div_middle);
-
-//    div_home_link.insertAfter(div_middle);
+    div_bottom.append(div_left_bottom);
 
 
-    createHomeLink(span_home_link);
+    var div_right_bottom = $('<div>', {
+
+        id: "div_right_bottom",
+        class: "cell"
+    });
+
+    div_bottom.append(div_right_bottom);
+
+    div_ok.appendTo(div_left_bottom);
+    div_cancel.appendTo(div_right_bottom);
+
+
+    div_left_bottom.width(div_left_top.width());
+
+
+    p_msg.css("margin-top", (div_left_top.height() - p_msg.height() )/2 +"px");
+    p_msg.css("margin-left", "5px");
+
+    b_ok.css("margin-top", (div_left_bottom.height() - b_ok.height() )/2 +"px");
+
+    it_first_name.width(ta_notes.width());
+    it_last_name.width(ta_notes.width());
+    it_phone.width(ta_notes.width());
+    it_email.width(ta_notes.width());
 };
 
 
 
-function createControl(parent_element)
+function createFrame(parent_element)
 {
+    div_frame = $('<div>', {
+
+        id: "div_frame",
+        class: "table english"
+    });
+
+    parent_element.append(div_frame);
+};
+
+
+function createWrappedElements()
+{
+
     b_english = $('<input>', {
 
         id: 'b_english',
-        class: 'control_buttons',
+        class: 'base',
         val: "English",
         type: "button",
         click: function()
@@ -79,15 +122,12 @@ function createControl(parent_element)
         }
     });
 
-    parent_element.append(b_english);
-
-
     b_hebrew = $('<input>', {
 
         id: 'b_hebrew',
-        class: 'control_buttons',
+        class: 'base',
         val: "Hebrew",
-        type:"button",
+        type: "button",
         click: function()
         {
             div_frame.removeClass('english');
@@ -96,14 +136,12 @@ function createControl(parent_element)
         }
     });
 
-    parent_element.append(b_hebrew);
-
     b_mobile = $('<input>', {
 
         id: 'b_mobile',
-        class: 'control_buttons',
+        class: 'base',
         val: "Mobile",
-        type:"button",
+        type: "button",
         click: function()
         {
             div_frame.removeClass('english');
@@ -112,207 +150,169 @@ function createControl(parent_element)
         }
     });
 
-    parent_element.append(b_mobile);
-};
+    div_control = $('<div>', {
 
-
-function createFrame(parent_element)
-{
-    div_middle= $('<div>', {
-
-        id: "div_middle",
-        class: "row"
+        id: "div_control",
+        class: "wrapper"
     });
 
-    parent_element.append(div_middle);
+    div_control.append(b_english);
+    div_control.append(b_hebrew);
+    div_control.append(b_mobile);
 
-    createMiddle(div_middle);
-
-
-    div_pannel = $('<div>', {
-
-        id: "div_pannel",
-        class: "row"
-    });
-
-    parent_element.append(div_pannel);
-
-    div_ok = $('<div>', {
-
-        id: "div_ok",
-        class: "cell"
-    });
-
-    div_pannel.append(div_ok);
-
-    createOK(div_ok);
-
-    div_cancel = $('<div>', {
-
-        id: "div_cancel",
-        class: "cell"
-    });
-
-    div_pannel.append(div_cancel);
-
-    createCancel(div_cancel);
-};
+    $('body').append(div_control);
 
 
-function createHomeLink(parent_element)
-{
-    l_home = $('<a>', {
-
-        id: 'l_home',
-        html: "Find out more about us",
-        href: "http://www.roojoom.com/"
-    });
-
-    parent_element.append(l_home);
-};
-
-
-function createMsg(parent_element)
-{
     p_msg = $('<p>', {
 
-        id: 'p_msg',
+        id: "p_msg",
+        class: "base",
         html: "Let's get to know you"
     });
 
-    parent_element.append(p_msg);
-};
+    div_msg = $('<div>', {
 
-
-
-function createMiddle(parent_element)
-{
-    div_msg_wrapper = $('<div>', {
-
-        id: "div_msg_wrapper",
-        class: "cell"
+        id: "div_msg",
+        class: "wrapper"
     });
 
-    parent_element.append(div_msg_wrapper);
+    div_msg.append(p_msg);
+
+    $('body').append(div_msg);
 
 
-    div_msg= $('<div>', {
 
-        id: "div_msg"
-    });
-
-    div_msg_wrapper.append(div_msg);
-
-    createMsg(div_msg);
-
-
-    div_form = $('<div>', {
-
-        id: "div_form",
-        class: "cell"
-    });
-
-    parent_element.append(div_form);
-
-    createForm(div_form);
-};
-
-
-function createForm(parent_element)
-{
-     it_first_name = $('<input>', {
+    it_first_name = $('<input>', {
 
         id: 'it_first_name',
-        class: 'form_inputs',
+        class: 'base',
         val: "First Name",
-        type:"text"
+        type: "text"
     });
 
-    parent_element.append(it_first_name);
-
-    parent_element.append('<br>');
 
     it_last_name = $('<input>', {
 
         id: 'it_last_name',
-        class: 'form_inputs',
+        class: 'base',
         val: "Last Name",
-        type:"text"
+        type: "text"
     });
 
-    parent_element.append(it_last_name);
-
-    parent_element.append('<br>');
 
     it_phone = $('<input>', {
 
         id: 'it_phone',
-        class: 'form_inputs',
+        class: 'base',
         val: "Phone",
-        type:"tel"
+        type: "tel"
     });
-
-    parent_element.append(it_phone);
-
-
-    parent_element.append('<br>');
 
     it_email = $('<input>', {
 
         id: 'it_email',
-        class: 'form_inputs',
-        val: "Email",
-        type:"email"
+        class: 'base',
+        val: "Last Name",
+        type: "email"
     });
-
-    parent_element.append(it_email);
-
-    parent_element.append('<br>');
 
     ta_notes = $('<textarea>', {
 
         id: 'ta_notes',
-        class: 'form_inputs',
-        val: "Notes",
-        rows: 4,
-        cols: 10
+        class: 'base',
+        val: "Notes"
     });
 
-    parent_element.append(ta_notes);
-}
+
+    div_form_fields = $('<div>', {
+
+        id: "div_form_fields",
+        class: "wrapper"
+    });
+
+    div_form_fields.append(it_first_name);
+    div_form_fields.append('<br>');
+    div_form_fields.append(it_last_name);
+    div_form_fields.append('<br>');
+    div_form_fields.append(it_phone);
+    div_form_fields.append('<br>');
+    div_form_fields.append(it_email);
+    div_form_fields.append('<br>');
+    div_form_fields.append(ta_notes);
+
+    $('body').append(div_form_fields);
+
+
+    a_rooj = $('<a>', {
+
+        id: 'a_rooj',
+        class: 'base',
+        html: "Find out more about us",
+        href: "http://www.roojoom.com/"
+    });
+
+    div_rooj = $('<div>', {
+
+        id: "div_rooj",
+        class: "wrapper"
+    });
+
+    div_rooj.append(a_rooj);
+
+    $('body').append(div_rooj);
 
 
 
-function createOK(parent_element)
-{
     b_ok = $('<input>', {
 
         id: 'b_ok',
-        class: 'op_buttons',
+        class: 'base  b_big',
         val: "OK",
-        type:"button",
+        type: "button",
         click: function()
         {
-            console.log('OK');
+            console.log('ok');
         }
     });
 
-    parent_element.append(b_ok);
-};
+    div_ok = $('<div>', {
 
-function createCancel(parent_element)
-{
+        id: "div_ok",
+        class: "wrapper"
+    });
+
+    div_ok.append(b_ok);
+
+    $('body').append(div_ok);
+
+
+
     b_cancel = $('<input>', {
 
         id: 'b_cancel',
-        class: 'op_buttons',
+        class: 'base  b_big',
         val: "Cancel",
-        type:"button",
+        type: "button",
         click: function()
         {
-            console.log('Cancel');
+            console.log('cancel');
         }
     });
 
-    parent_element.append(b_cancel);
+    div_cancel = $('<div>', {
+
+        id: "div_cancel",
+        class: "wrapper"
+    });
+
+    div_cancel.append(b_cancel);
+
+    $('body').append(div_cancel);
+
+
 };
+
+
+
+
+
